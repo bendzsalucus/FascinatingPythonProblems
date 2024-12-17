@@ -89,6 +89,8 @@ Create subclasses for the following account types:
 - **KasasaPlayAccount**
 - **KasasaCashBackAccount**
 
+*Hint: May be a good place for inheritance in here: hint, hint. 
+
 #### **How to Generate Classes Using AI**
 1. **Provide the AI Tool with Information**:
    - Give the tool the details about the account type (minimum deposit, rewards, etc.).

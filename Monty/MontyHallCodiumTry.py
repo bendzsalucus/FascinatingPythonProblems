@@ -1,19 +1,6 @@
 import numpy as np
 
 class MontyHallSimulation:
-    """
-
-    Credit: Harvard CS 109: Data Science Public Class available at: https://github.com/cs109/content
-    Problem has been modified and set up for use by Lucus Bendzsa.
-
-    This class simulates the Monty Hall problem with N doors and G doors revealed by the host.
-
-    It provides methods to simulate the game, calculate win percentages for different strategies,
-    and analyze the results. The Monty Hall problem is a probability puzzle named after the host
-    of the game show "Let's Make a Deal." It challenges participants to maximize their chances
-    of winning by understanding conditional probabilities.
-    """
-
     def __init__(self, nsim, N, G):
         """
         Initializes the simulation.
@@ -23,7 +10,9 @@ class MontyHallSimulation:
           N: The number of doors.
           G: The number of doors the host opens.
         """
-        #TODO: Initialize the class variables. 
+        self.nsim = nsim
+        self.N = N
+        self.G = G
 
     def simulate_prizedoor(self):
         """
@@ -33,7 +22,7 @@ class MontyHallSimulation:
           An array of size nsim, where each element is an integer representing 
           the door number (0 to N-1) where the prize is located.
         """
-        #TODO: Implement this function. 
+        return np.random.randint(0, self.N, size=self.nsim)
 
     def simulate_guess(self):
         """
@@ -43,21 +32,26 @@ class MontyHallSimulation:
           An array of size nsim, where each element is an integer representing
           the door the contestant initially guesses.
         """
-        #TODO: Implement this function. 
+        return np.random.randint(0, self.N, size=self.nsim)
 
     def host_opens_doors(self, prizedoors, guesses):
         """
         Simulates the host opening G doors to reveal goats.
 
         Args:
-          prizedoors: An array of door numbers with the prize.
-          guesses: An array of the contestant's initial guesses.
+        prizedoors: An array of door numbers with the prize.
+        guesses: An array of the contestant's initial guesses.
 
         Returns:
-          An array of sets, where each set contains the doors opened by the host.
+        An array of sets, where each set contains the doors opened by the host.
         """
-        #TODO: Implement this function.
-         
+        opened_doors = []
+        for i in range(self.nsim):
+            possible_doors = set(range(self.N))
+            possible_doors.remove(prizedoors[i] - 1)  # <--- Changed this line
+            possible_doors.discard(guesses[i])  # <--- Changed this line
+            opened_doors.append(set(np.random.choice(list(possible_doors), size=self.G, replace=False)))
+        return opened_doors
 
     def switch_guess(self, guesses, opened_doors):
       """
@@ -70,7 +64,13 @@ class MontyHallSimulation:
       Returns:
         An array of the new guesses after switching.
       """
-      #TODO: Implement this function
+      new_guesses = []
+      for i in range(self.nsim):
+        possible_doors = set(range(self.N))
+        possible_doors -= opened_doors[i]
+        possible_doors -= {guesses[i]}
+        new_guesses.append(np.random.choice(list(possible_doors)))
+      return new_guesses
 
     def win_percentage(self, guesses, prizedoors):
         """
@@ -83,7 +83,8 @@ class MontyHallSimulation:
         Returns:
           The win percentage.
         """
-        #TODO: Implement this function
+        wins = np.sum(np.equal(guesses, prizedoors))
+        return (wins / self.nsim) * 100
 
 def test_monty_hall(nsim, N, G, expected_stick_win_pct, expected_switch_win_pct, tolerance=1.0):
     """
