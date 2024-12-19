@@ -115,10 +115,6 @@ Evaluate each tool based on the following capabilities:
 - **Generate New Components**: Effectiveness in creating new classes, functions, or interfaces.
 - **Refactor Functions**: Quality and accuracy of refactored code.
 - **Resolve Multi-Line Bugs**: Ability to diagnose and resolve tricky, multi-line issues.
-
-### **Context Awareness**
-- **Context Pinning**: Effectiveness in understanding project-specific context for better suggestions.
-
 ---
 
 ## **6. Time Management**
