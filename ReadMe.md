@@ -12,8 +12,7 @@ Detailed instructions are provided by each individual supplier. Rather than re-i
 - **Setup**:
   - Follow the installation guide here: [Codium Installation](https://docs.codeium.com/extensions/getting-started).
   - Install the extension for your IDE (e.g., VS Code).
-  - **Sign Up**: Use your company email to register an account.
-  - After registration, Codium will provide access to the Pro Subscription.
+  - **Sign Up**: Wait for an email to your V2X email (**watch the spam folder**) for an enterprise signup. 
   
 ### **1.2 GitHub Copilot**
 - **Setup**:
@@ -25,7 +24,7 @@ Detailed instructions are provided by each individual supplier. Rather than re-i
 - **Setup**:
   - Follow the installation guide here: [Tabnine Installation](https://docs.tabnine.com/main/getting-started/misc/client-setup-saas/vs-code).
   - Install the extension for your IDE.
-  - Use a free Tabnine account for this evaluation.
+  - **Sign Up**: Wait for an email to your V2X email (**watch the spam folder**) for an enterprise signup. 
 
 ---
 
