@@ -19,7 +19,7 @@ Detailed instructions are provided by each individual supplier. Rather than re-i
 - **Setup**:
   - Follow the quickstart guide here: [GitHub Copilot Setup](https://docs.github.com/en/copilot/quickstart).
   - Install the extension for your IDE.
-  - **Licensing**: You will need to start a free trial. If you desire a prepaid debit cardm  , a prepaid debit card will be provided.
+  - GitHub CoPilot has a free tier, that will be sufficient for this test. The only difference between the pro and free tier is the number of calls to the API. 
 
 ### **1.3 Tabnine**
 - **Setup**:
